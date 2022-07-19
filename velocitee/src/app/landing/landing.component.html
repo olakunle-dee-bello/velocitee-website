@@ -1,0 +1,226 @@
+<div class="container-fluid">
+
+    <!-- Navigation -->
+    <div class="full-nav">
+        <div class="row">
+            <div class="col-sm-3">
+                <span>
+                    <img src="../../assets/img/logo.png" alt="Logo" class="logo">
+                </span>
+            </div>
+            <div class="col-sm-6">
+                <div class="nav">
+                    <ul>
+                        <li><a class="nav-link" (click)="this.onProducts = !this.onProducts">
+                                Products <span><img src="../../assets/img/caret-down.png" alt=""
+                                        class="caret"></span></a>
+                        </li>
+                        <li><a class="nav-link">About</a></li>
+                        <li><a class="nav-link">Contact</a></li>
+                        <li><a class="nav-link">Career</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-3 text-right">
+                <button class="btn btn-dark" (click)="getIntouch()">Get in Touch</button>
+            </div>
+        </div>
+
+        <!-- Product Dropdown -->
+        <div class="row justify-content-end">
+            <div class="col-sm-9">
+                <div class="relative">
+                    <div class="absolute">
+
+                        <div *ngIf="onProducts === true" class="products-dropdown slide-bottom">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="product-title">Products</div>
+                                    <div class="product-summary">
+                                        {{pageData.product_summary}}
+                                    </div>
+                                </div>
+                                <div class="col pointer" [routerLink]="['/', 'adsift']">
+                                    <div class="prod">
+                                        <img src="../../assets/img/adsift-logo.png" style="width:50px" alt="">
+                                        <div class="product-summary">
+                                            {{pageData.adsift_summary}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col pointer" [routerLink]="['/', 'carligy']">
+                                    <div class="prod">
+                                        <img src="../../assets/img/carligy-logo.png" style="width:50px" alt="">
+                                        <div class="product-summary">
+                                            {{pageData.carligy_summary}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section-1 mt-5" (click)="this.onProducts = !this.onProducts">
+        <div class="row">
+            <div class="col">
+                <div class="lead-c">
+                    <h3 class="lead-title">{{pageData.leadTitle}}</h3>
+                    <div class="lead-content">{{pageData.leadContent}}</div>
+                </div>
+            </div>
+            <div class="col text-center">
+                <img class="lead-img" src="../../assets/img/header-img-1.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section-2" (click)="this.onProducts = !this.onProducts">
+        <div class="sect sect2">
+            <div class="row">
+                <div class="col">
+                    <img style="width: 50px;" src="../../assets/img/adsift-logo.png" alt="">
+                    <h2 class="se text-white">
+                        {{pageData.section2_header}}
+                    </h2>
+                    <div class="sec2-content">
+                        {{pageData.section2_content}}
+                    </div>
+
+
+                    <a class="pointer sec-btn" [routerLink]="['/', 'adsift']">
+                        <img src="../../assets/img/adsift_learn_more.png" alt="">
+                    </a>
+                </div>
+                <div class="col">
+                    <img src="../../assets/img/o-bg.png" alt="">
+                    <img style="position: relative; top: 80px; left: 40px;" src="../../assets/img/w-bg.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section-3">
+        <div class="sect sect3">
+            <div class="row">
+                <div class="col">
+                    <img style="width: 60px;" src="../../assets/img/carligy-logo.png" alt="">
+                    <h2 class="se" style="color: #011B33;">
+                        {{pageData.section3_header}}
+                    </h2>
+                    <div class="sec2-content" style="color: #4F4F4F;">
+                        {{pageData.section3_content}}
+                    </div>
+
+
+                    <a class="pointer sec-btn" [routerLink]="['/', 'adsift']">
+                        <img src="../../assets/img/carligy_learn_more.png" alt="">
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <img style="max-width: 350px;" src="../../assets/img/job_hunt.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section-4">
+        <div class="row">
+            <div class="col">
+                <img style="max-width: 500px;" src="../../assets/img/sect-4-img.png" alt="">
+            </div>
+            <div class="col">
+                <h4 class="section4-header text-white">
+                    {{pageData.section4_header}}
+                </h4>
+                <div class="section4_content text-white">
+                    {{pageData.section4_content}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section-5">
+        <div class="row">
+            <div class="col">
+                <img style="max-width: 500px;" src="../../assets/img/sect-5-img.png" alt="">
+            </div>
+            <div class="col">
+                <h4 class="section5-header">
+                    {{pageData.section5_header}}
+                </h4>
+
+                <div class="section5_content">
+                    <ul>
+                        <li *ngFor="let i of pageData.sect5_content">
+                            <span><img src="../../assets/img/o-tick.png" alt=""></span>
+                            <span>{{i}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section-6 text-white">
+        <h3 class="text-center" style="margin-bottom: 2em;">Frequently asked question</h3>
+        <div class="faq" *ngFor="let i of pageData.faq">
+            <div class="row">
+                <div class="col-sm-10">{{i.question}}</div>
+                <div class="col-sm-2 text-right">
+                    <span (click)="i.isOpen = !i.isOpen"><img src="../../assets/img/caret-down-w.png" alt=""></span>
+                </div>
+            </div>
+            <div *ngIf="i.isOpen" class="faq-c slide-bottom">
+                {{i.content}}
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Section 7 -->
+    <div class="section-7">
+        <div class="row">
+            <div class="col-4 pp">
+                <img style="width: 85px;" src="../../assets/img/logo.png" alt="">
+                <div style="margin-top: 20px;">Pushing the boundaries of growth on human potential</div>
+            </div>
+            <div class="col-2 pp">
+                <div class="tt">Products</div>
+                <div class="pointer" [routerLink]="['/', 'carligy']">Carligy</div>
+                <div class="pointer" [routerLink]="['/', 'adsift']">AdSift</div>
+            </div>
+            <div class="col-2 pp">
+                <div class="tt">Pages</div>
+                <div class="pointer" [routerLink]="['/', 'home']">Home</div>
+                <div class="pointer" [routerLink]="['/', 'about']">About Us</div>
+                <div class="pointer" [routerLink]="['/', 'contact']">Contact Us</div>
+                <div class="pointer" [routerLink]="['/', 'career']">Career</div>
+            </div>
+            <div class="col-2 pp">
+                <div class="tt">Pages</div>
+                <div>0800 121 2345</div>
+                <div>support@velocitee.africa</div>
+                <div>contact@velocitee.africa</div>
+                <div>sales@velocitee.africa</div>
+            </div>
+            <div class="col-2 pp">
+                <div class="tt">Socials</div>
+                <div class="pointer">Instagram</div>
+                <div class="pointer">Twitter</div>
+                <div class="pointer">LinkedIn</div>
+                <div class="pointer">FAQ</div>
+            </div>
+        </div>
+    </div>
+</div>
